@@ -42,7 +42,7 @@ export default function Emergency() {
   const fetchEmergency = async (code) => {
     setLoading(true)
     try {
-      const res = await axios.get(`http://localhost:5000/api/emergency?country=${code}`)
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/emergency?country=${code}`)
       setData(res.data)
     } finally {
       setLoading(false)

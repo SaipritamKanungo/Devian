@@ -22,7 +22,7 @@ export default function Crypto() {
   const fetchCrypto = async () => {
     setLoading(true)
     try {
-      const res = await axios.get('http://localhost:5000/api/crypto?coins=bitcoin,ethereum,solana,dogecoin,cardano,polkadot')
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/crypto?coins=bitcoin,ethereum,solana,dogecoin,cardano,polkadot`)
       setCryptos(res.data)
     } finally {
       setLoading(false)

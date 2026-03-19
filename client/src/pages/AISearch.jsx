@@ -30,7 +30,7 @@ export default function AISearch() {
     setError(null)
     setResult(null)
     try {
-      const res = await axios.get(`http://localhost:5000/api/search?query=${encodeURIComponent(searchQuery)}`)
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/search?query=${encodeURIComponent(searchQuery)}`)
       setResult(res.data)
     } catch {
       setError('Search failed. Please try again.')

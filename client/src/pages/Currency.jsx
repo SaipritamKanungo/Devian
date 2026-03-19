@@ -37,7 +37,7 @@ export default function Currency() {
   const fetchCurrency = async (b) => {
     setLoading(true)
     try {
-      const res = await axios.get(`http://localhost:5000/api/currency?base=${b || base}`)
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/currency?base=${b || base}`)
       setRates(res.data.conversion_rates)
     } finally {
       setLoading(false)

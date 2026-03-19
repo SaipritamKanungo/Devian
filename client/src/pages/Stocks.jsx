@@ -42,7 +42,7 @@ export default function Stocks() {
     setLoading(true)
     setError(null)
     try {
-      const res = await axios.get(`http://localhost:5000/api/stocks?symbol=${query}`)
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/stocks?symbol=${query}`)
       const quote = res.data['Global Quote']
       if (!quote || !quote['05. price']) {
         setError('Stock not found or API limit reached.')

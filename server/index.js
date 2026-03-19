@@ -8,7 +8,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://devian-client.vercel.app', '*'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 app.use(express.json());
 
 // Routes
@@ -30,7 +34,6 @@ app.use("/api/stocks", stocksRoutes);
 app.use("/api/search", searchRoutes);
 app.use("/api/emergency", emergencyRoutes);
 
-// Important for Vercel serverless
 if (process.env.NODE_ENV !== "production") {
   app.listen(PORT, () => {
     console.log(`✅ Devian server running on port ${PORT}`);

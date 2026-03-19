@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Urbanist', sans-serif;
+  background-color: #080810;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #7c3aed55; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #7c3aed; }
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(124, 58, 237, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.15);
+}
+
+/* Glow effects */
+.glow-violet {
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.3);
+}
+
+/* Animated background */
+.bg-animated {
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0) 0%, #080810 70%),
+    #080810;
+}
+
+/* Smooth transitions */
+.sidebar-transition {
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Page animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(124, 58, 237, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(124, 58, 237, 0.6); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease infinite;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mobile-header {
+    display: flex !important;
+  }
+
+  .main-content {
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Reduce grid columns on tablets */
+}

@@ -1,0 +1,38 @@
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const weatherRoutes = require("./routes/weatherRoutes");
+const cryptoRoutes = require("./routes/cryptoRoutes");
+const currencyRoutes = require("./routes/currencyRoutes");
+const stocksRoutes = require("./routes/stocksRoutes");
+const searchRoutes = require("./routes/searchRoutes");
+const emergencyRoutes = require("./routes/emergencyRoutes");
+
+
+
+
+dotenv.config();
+
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Test route
+app.get("/", (req, res) => {
+  res.json({ message: "Devian API is running!" });
+});
+
+// Routes (we'll add these soon)
+app.use("/api/weather", weatherRoutes);
+app.use("/api/stocks", stocksRoutes);
+app.use("/api/currency", currencyRoutes);
+app.use("/api/crypto", cryptoRoutes);
+app.use("/api/search", searchRoutes);
+app.use("/api/emergency", emergencyRoutes);
+
+app.listen(PORT, () => {
+  console.log(` Devian server running on port ${PORT}`);
+});

@@ -1,0 +1,77 @@
+const emergencyNumbers = {
+  IN: {
+    country: "India",
+    police: "100",
+    ambulance: "108",
+    fire: "101",
+    emergency: "112",
+    women_helpline: "1091",
+    child_helpline: "1098",
+    disaster: "1077",
+  },
+  US: {
+    country: "United States",
+    police: "911",
+    ambulance: "911",
+    fire: "911",
+    emergency: "911",
+  },
+  UK: {
+    country: "United Kingdom",
+    police: "999",
+    ambulance: "999",
+    fire: "999",
+    emergency: "112",
+  },
+  AU: {
+    country: "Australia",
+    police: "000",
+    ambulance: "000",
+    fire: "000",
+    emergency: "112",
+  },
+  CA: {
+    country: "Canada",
+    police: "911",
+    ambulance: "911",
+    fire: "911",
+    emergency: "911",
+  },
+  JP: {
+    country: "Japan",
+    police: "110",
+    ambulance: "119",
+    fire: "119",
+    emergency: "110",
+  },
+  DE: {
+    country: "Germany",
+    police: "110",
+    ambulance: "112",
+    fire: "112",
+    emergency: "112",
+  },
+  FR: {
+    country: "France",
+    police: "17",
+    ambulance: "15",
+    fire: "18",
+    emergency: "112",
+  },
+  SG: {
+    country: "Singapore",
+    police: "999",
+    ambulance: "995",
+    fire: "995",
+    emergency: "112",
+  },
+  AE: {
+    country: "United Arab Emirates",
+    police: "999",
+    ambulance: "998",
+    fire: "997",
+    emergency: "999",
+  },
+};
+
+module.exports = emergencyNumbers;

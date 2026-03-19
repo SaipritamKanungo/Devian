@@ -47,6 +47,7 @@ Devian is a full-stack universal data dashboard built with the MERN stack and po
 ### 1️⃣ Clone the repo
 
 git clone https://github.com/SaipritamKanungo/devian.git
+
 cd devian
 
 ### 2️⃣ Setup the backend
